@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- CONSTRUCTORS -->
+    <bean id="s1" class="com.demo.entity.Student">
+        <constructor-arg name="sid" value = "1"> </constructor-arg>
+        <constructor-arg name="studentname" value = "A"> </constructor-arg>
+        <constructor-arg name="email" value = "1@gmail.com"> </constructor-arg>
+        <constructor-arg name="phone" value = "123456"> </constructor-arg>
+        <constructor-arg name="course" ref="course" />
+
+    </bean>
+    <!-- SETTERS -->
+    <bean id="s2" class="com.demo.entity.Student">
+        <property name="sid" value = "2"> </property>
+        <property name="studentname" value = "B"> </property>
+        <property name="email" value = "2@gmail.com"> </property>
+        <property name="phone" value = "234561"> </property>
+        <property name="course" ref="course"></property>
+    </bean>
+    <bean id="course" class="com.demo.entity.Course" >
+        <constructor-arg name="courseId" value = "1"> </constructor-arg>
+        <constructor-arg name="courseName" value = "Course1"> </constructor-arg>
+        <constructor-arg name="description" value = "A course about java"> </constructor-arg>
+    </bean>
+</beans>

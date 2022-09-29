@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/tool"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd">
+    <context:annotation-config />
+
+    <!-- CONSTRUCTORS -->
+    <!-- SETTERS -->
+    <bean id="s2" class="com.demo.entity.Student" lazy-init="true"> </bean>
+    <bean id="course" class="com.demo.entity.Course" >  </bean>
+</beans>
