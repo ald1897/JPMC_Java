@@ -1,27 +1,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
-    <!-- CONSTRUCTORS -->
-    <bean id="s1" class="com.demo.entity.Student">
-        <constructor-arg name="sid" value = "1"> </constructor-arg>
-        <constructor-arg name="studentname" value = "A"> </constructor-arg>
-        <constructor-arg name="email" value = "1@gmail.com"> </constructor-arg>
-        <constructor-arg name="phone" value = "123456"> </constructor-arg>
-        <constructor-arg name="course" ref="course" />
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- using constructor -->
+    <bean id="s1" class="com.demo.entity.Student">
+        <constructor-arg name="sid" value="1"/>
+        <constructor-arg name="studentname" value="Shalini"/>
+        <constructor-arg name="email" value="shalini@gmail.com"/>
+        <constructor-arg name="phone" value="123456778890"/>
+        <constructor-arg name="course" ref="course"/>
     </bean>
-    <!-- SETTERS -->
-    <bean id="s2" class="com.demo.entity.Student">
-        <property name="sid" value = "2"> </property>
-        <property name="studentname" value = "B"> </property>
-        <property name="email" value = "2@gmail.com"> </property>
-        <property name="phone" value = "234561"> </property>
-        <property name="course" ref="course"></property>
+    <!-- setters -->
+    <bean id="s2" class="com.demo.entity.Student" lazy-init="true">
+        <property name="sid" value="2"/>
+        <property name="studentname" value="Rashmi"/>
+        <property name="email" value="rashmi@gmail.com"/>
+        <property name="phone" value="9898989898"/>
+        <property name="course" ref="course"/>
     </bean>
-    <bean id="course" class="com.demo.entity.Course" >
-        <constructor-arg name="courseId" value = "1"> </constructor-arg>
-        <constructor-arg name="courseName" value = "Course1"> </constructor-arg>
-        <constructor-arg name="description" value = "A course about java"> </constructor-arg>
+   <bean id="course" class="com.demo.entity.Course" > <!-- scope="prototype">-->
+        <constructor-arg name="courseid" value="1"/>
+        <constructor-arg name="coursename" value="Core Java"/>
+        <constructor-arg name="description" value="Learn core java"/>
     </bean>
 </beans>
